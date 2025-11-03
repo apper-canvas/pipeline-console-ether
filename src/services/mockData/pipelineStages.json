@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "name": "Lead",
+    "order": 1,
+    "color": "#64748b"
+  },
+  {
+    "Id": 2,
+    "name": "Qualified",
+    "order": 2,
+    "color": "#2563eb"
+  },
+  {
+    "Id": 3,
+    "name": "Proposal",
+    "order": 3,
+    "color": "#f59e0b"
+  },
+  {
+    "Id": 4,
+    "name": "Closed",
+    "order": 4,
+    "color": "#10b981"
+  }
+]

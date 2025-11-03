@@ -1,0 +1,90 @@
+[
+  {
+    "Id": 1,
+    "name": "Sarah Johnson",
+    "email": "sarah.johnson@techcorp.com",
+    "phone": "(555) 123-4567",
+    "company": "TechCorp Solutions",
+    "tags": ["VIP", "Decision Maker"],
+    "notes": "CEO of a growing software company. Very interested in enterprise solutions. Prefers email communication over phone calls.",
+    "createdAt": "2024-01-15T10:30:00Z",
+    "updatedAt": "2024-01-20T14:22:00Z"
+  },
+  {
+    "Id": 2,
+    "name": "Michael Chen",
+    "email": "m.chen@innovateplus.com",
+    "phone": "(555) 234-5678",
+    "company": "Innovate Plus",
+    "tags": ["Lead", "Tech"],
+    "notes": "CTO looking for scalable solutions. Has budget approved for Q2. Schedule follow-up next week.",
+    "createdAt": "2024-01-12T09:15:00Z",
+    "updatedAt": "2024-01-18T11:45:00Z"
+  },
+  {
+    "Id": 3,
+    "name": "Emily Rodriguez",
+    "email": "emily.r@growthventures.com",
+    "phone": "(555) 345-6789",
+    "company": "Growth Ventures",
+    "tags": ["Partner", "Hot Lead"],
+    "notes": "Venture capital firm partner. Interested in strategic partnership opportunities. Very responsive to communications.",
+    "createdAt": "2024-01-10T16:20:00Z",
+    "updatedAt": "2024-01-22T13:10:00Z"
+  },
+  {
+    "Id": 4,
+    "name": "David Wilson",
+    "email": "david.wilson@marketleaders.com",
+    "phone": "(555) 456-7890",
+    "company": "Market Leaders Inc",
+    "tags": ["Enterprise", "Qualified"],
+    "notes": "VP of Operations at large enterprise. Looking for comprehensive CRM solution. Meeting scheduled for next Tuesday.",
+    "createdAt": "2024-01-08T12:45:00Z",
+    "updatedAt": "2024-01-19T15:30:00Z"
+  },
+  {
+    "Id": 5,
+    "name": "Lisa Thompson",
+    "email": "lisa.t@dynamicsales.com",
+    "phone": "(555) 567-8901",
+    "company": "Dynamic Sales Co",
+    "tags": ["SMB", "Warm"],
+    "notes": "Sales Director at mid-size company. Budget constraints but very interested. Needs ROI demonstration.",
+    "createdAt": "2024-01-05T14:10:00Z",
+    "updatedAt": "2024-01-17T10:20:00Z"
+  },
+  {
+    "Id": 6,
+    "name": "Robert Kim",
+    "email": "robert.kim@nextgenstartup.com",
+    "phone": "(555) 678-9012",
+    "company": "NextGen Startup",
+    "tags": ["Startup", "Founder"],
+    "notes": "Founder of AI startup. Limited budget but high growth potential. Interested in startup-friendly pricing.",
+    "createdAt": "2024-01-03T11:25:00Z",
+    "updatedAt": "2024-01-16T09:55:00Z"
+  },
+  {
+    "Id": 7,
+    "name": "Jennifer Adams",
+    "email": "j.adams@globalenterprises.com",
+    "phone": "(555) 789-0123",
+    "company": "Global Enterprises",
+    "tags": ["Enterprise", "Decision Maker", "VIP"],
+    "notes": "Chief Marketing Officer at Fortune 500 company. Evaluating multiple vendors. Presentation scheduled for Friday.",
+    "createdAt": "2024-01-01T08:00:00Z",
+    "updatedAt": "2024-01-21T16:45:00Z"
+  },
+  {
+    "Id": 8,
+    "name": "Mark Stevens",
+    "email": "mark.stevens@agiletech.com",
+    "phone": "(555) 890-1234",
+    "company": "Agile Tech",
+    "tags": ["Tech", "Qualified"],
+    "notes": "Engineering Manager looking for team collaboration tools. Technical evaluation in progress. Very detail-oriented.",
+    "createdAt": "2023-12-28T13:30:00Z",
+    "updatedAt": "2024-01-14T12:15:00Z"
+  }
+]

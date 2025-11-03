@@ -1,0 +1,112 @@
+[
+  {
+    "Id": 1,
+    "title": "TechCorp Enterprise License",
+    "value": 85000,
+    "contactId": 1,
+    "stage": "Proposal",
+    "status": "active",
+    "expectedCloseDate": "2024-02-28",
+    "createdAt": "2024-01-15T10:30:00Z",
+    "updatedAt": "2024-01-20T14:22:00Z"
+  },
+  {
+    "Id": 2,
+    "title": "Innovate Plus Implementation",
+    "value": 45000,
+    "contactId": 2,
+    "stage": "Qualified",
+    "status": "active",
+    "expectedCloseDate": "2024-03-15",
+    "createdAt": "2024-01-12T09:15:00Z",
+    "updatedAt": "2024-01-18T11:45:00Z"
+  },
+  {
+    "Id": 3,
+    "title": "Growth Ventures Partnership",
+    "value": 150000,
+    "contactId": 3,
+    "stage": "Proposal",
+    "status": "active",
+    "expectedCloseDate": "2024-02-15",
+    "createdAt": "2024-01-10T16:20:00Z",
+    "updatedAt": "2024-01-22T13:10:00Z"
+  },
+  {
+    "Id": 4,
+    "title": "Market Leaders CRM Setup",
+    "value": 120000,
+    "contactId": 4,
+    "stage": "Qualified",
+    "status": "active",
+    "expectedCloseDate": "2024-04-01",
+    "createdAt": "2024-01-08T12:45:00Z",
+    "updatedAt": "2024-01-19T15:30:00Z"
+  },
+  {
+    "Id": 5,
+    "title": "Dynamic Sales Solution",
+    "value": 25000,
+    "contactId": 5,
+    "stage": "Lead",
+    "status": "active",
+    "expectedCloseDate": "2024-03-30",
+    "createdAt": "2024-01-05T14:10:00Z",
+    "updatedAt": "2024-01-17T10:20:00Z"
+  },
+  {
+    "Id": 6,
+    "title": "NextGen Startup Package",
+    "value": 15000,
+    "contactId": 6,
+    "stage": "Lead",
+    "status": "active",
+    "expectedCloseDate": "2024-04-15",
+    "createdAt": "2024-01-03T11:25:00Z",
+    "updatedAt": "2024-01-16T09:55:00Z"
+  },
+  {
+    "Id": 7,
+    "title": "Global Enterprises Platform",
+    "value": 250000,
+    "contactId": 7,
+    "stage": "Proposal",
+    "status": "active",
+    "expectedCloseDate": "2024-02-20",
+    "createdAt": "2024-01-01T08:00:00Z",
+    "updatedAt": "2024-01-21T16:45:00Z"
+  },
+  {
+    "Id": 8,
+    "title": "Agile Tech Team Tools",
+    "value": 35000,
+    "contactId": 8,
+    "stage": "Qualified",
+    "status": "active",
+    "expectedCloseDate": "2024-03-10",
+    "createdAt": "2023-12-28T13:30:00Z",
+    "updatedAt": "2024-01-14T12:15:00Z"
+  },
+  {
+    "Id": 9,
+    "title": "Previous Deal - Won",
+    "value": 75000,
+    "contactId": 1,
+    "stage": "Closed",
+    "status": "won",
+    "expectedCloseDate": "2024-01-15",
+    "createdAt": "2023-12-01T10:00:00Z",
+    "updatedAt": "2024-01-15T14:30:00Z"
+  },
+  {
+    "Id": 10,
+    "title": "Lost Opportunity",
+    "value": 50000,
+    "contactId": 2,
+    "stage": "Closed",
+    "status": "lost",
+    "expectedCloseDate": "2024-01-10",
+    "createdAt": "2023-11-15T09:00:00Z",
+    "updatedAt": "2024-01-10T16:20:00Z"
+  }
+]

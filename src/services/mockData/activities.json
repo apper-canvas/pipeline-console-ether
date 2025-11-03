@@ -1,0 +1,117 @@
+[
+  {
+    "Id": 1,
+    "contactId": 1,
+    "dealId": 1,
+    "type": "deal_created",
+    "description": "Deal \"TechCorp Enterprise License\" was created with value $85,000",
+    "timestamp": "2024-01-15T10:30:00Z"
+  },
+  {
+    "Id": 2,
+    "contactId": 1,
+    "dealId": 1,
+    "type": "deal_stage_changed",
+    "description": "Deal \"TechCorp Enterprise License\" moved from Qualified to Proposal",
+    "timestamp": "2024-01-20T14:22:00Z"
+  },
+  {
+    "Id": 3,
+    "contactId": 2,
+    "dealId": 2,
+    "type": "deal_created",
+    "description": "Deal \"Innovate Plus Implementation\" was created with value $45,000",
+    "timestamp": "2024-01-12T09:15:00Z"
+  },
+  {
+    "Id": 4,
+    "contactId": 3,
+    "dealId": 3,
+    "type": "deal_created",
+    "description": "Deal \"Growth Ventures Partnership\" was created with value $150,000",
+    "timestamp": "2024-01-10T16:20:00Z"
+  },
+  {
+    "Id": 5,
+    "contactId": 1,
+    "type": "note_added",
+    "description": "Added note: Follow-up meeting scheduled for next week to discuss implementation timeline",
+    "timestamp": "2024-01-19T11:15:00Z"
+  },
+  {
+    "Id": 6,
+    "contactId": 4,
+    "dealId": 4,
+    "type": "deal_created",
+    "description": "Deal \"Market Leaders CRM Setup\" was created with value $120,000",
+    "timestamp": "2024-01-08T12:45:00Z"
+  },
+  {
+    "Id": 7,
+    "contactId": 3,
+    "type": "email_sent",
+    "description": "Sent partnership proposal email with detailed terms and conditions",
+    "timestamp": "2024-01-22T13:10:00Z"
+  },
+  {
+    "Id": 8,
+    "contactId": 5,
+    "dealId": 5,
+    "type": "deal_created",
+    "description": "Deal \"Dynamic Sales Solution\" was created with value $25,000",
+    "timestamp": "2024-01-05T14:10:00Z"
+  },
+  {
+    "Id": 9,
+    "contactId": 2,
+    "type": "call_made",
+    "description": "Had 30-minute discovery call to understand technical requirements",
+    "timestamp": "2024-01-18T11:45:00Z"
+  },
+  {
+    "Id": 10,
+    "contactId": 6,
+    "dealId": 6,
+    "type": "deal_created",
+    "description": "Deal \"NextGen Startup Package\" was created with value $15,000",
+    "timestamp": "2024-01-03T11:25:00Z"
+  },
+  {
+    "Id": 11,
+    "contactId": 7,
+    "dealId": 7,
+    "type": "deal_created",
+    "description": "Deal \"Global Enterprises Platform\" was created with value $250,000",
+    "timestamp": "2024-01-01T08:00:00Z"
+  },
+  {
+    "Id": 12,
+    "contactId": 7,
+    "type": "email_sent",
+    "description": "Sent presentation deck for Friday's executive review meeting",
+    "timestamp": "2024-01-21T16:45:00Z"
+  },
+  {
+    "Id": 13,
+    "contactId": 8,
+    "dealId": 8,
+    "type": "deal_created",
+    "description": "Deal \"Agile Tech Team Tools\" was created with value $35,000",
+    "timestamp": "2023-12-28T13:30:00Z"
+  },
+  {
+    "Id": 14,
+    "contactId": 8,
+    "type": "note_added",
+    "description": "Technical evaluation in progress. Requires detailed integration documentation.",
+    "timestamp": "2024-01-14T12:15:00Z"
+  },
+  {
+    "Id": 15,
+    "contactId": 1,
+    "dealId": 9,
+    "type": "deal_stage_changed",
+    "description": "Deal \"Previous Deal - Won\" moved to Closed stage with Won status",
+    "timestamp": "2024-01-15T14:30:00Z"
+  }
+]
