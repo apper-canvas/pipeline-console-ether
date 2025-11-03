@@ -58,12 +58,12 @@ const Pipeline = () => {
       await dealService.delete(deal.Id);
       
       // Log activity
-      await activityService.create({
-        contactId: deal.contactId,
-        dealId: deal.Id,
-        type: "deal_deleted",
-        description: `Deal "${deal.title}" was deleted`,
-        timestamp: new Date().toISOString()
+await activityService.create({
+        contactId_c: deal.contactId_c,
+        dealId_c: deal.Id,
+        type_c: "deal_deleted",
+        description_c: `Deal "${deal.title_c}" was deleted`,
+        timestamp_c: new Date().toISOString()
       });
 
       toast.success("Deal deleted successfully!");
@@ -83,23 +83,23 @@ const Pipeline = () => {
         savedDeal = await dealService.update(selectedDeal.Id, dealData);
         
         // Log activity
-        await activityService.create({
-          contactId: dealData.contactId,
-          dealId: selectedDeal.Id,
-          type: "deal_updated",
-          description: `Deal "${dealData.title}" was updated`,
-          timestamp: new Date().toISOString()
+await activityService.create({
+          contactId_c: dealData.contactId_c,
+          dealId_c: selectedDeal.Id,
+          type_c: "deal_updated",
+          description_c: `Deal "${dealData.title_c}" was updated`,
+          timestamp_c: new Date().toISOString()
         });
       } else {
         savedDeal = await dealService.create(dealData);
         
         // Log activity
-        await activityService.create({
-          contactId: dealData.contactId,
-          dealId: savedDeal.Id,
-          type: "deal_created",
-          description: `Deal "${dealData.title}" was created with value ${new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(dealData.value)}`,
-          timestamp: new Date().toISOString()
+await activityService.create({
+          contactId_c: dealData.contactId_c,
+          dealId_c: savedDeal.Id,
+          type_c: "deal_created",
+          description_c: `Deal "${dealData.title_c}" was created with value ${new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(dealData.value_c)}`,
+          timestamp_c: new Date().toISOString()
         });
       }
       

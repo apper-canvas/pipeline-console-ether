@@ -9,26 +9,26 @@ import ApperIcon from "@/components/ApperIcon";
 
 const DealForm = ({ deal, contacts = [], stages = [], onSave, onCancel, isLoading = false }) => {
   const [formData, setFormData] = useState({
-    title: "",
-    value: "",
-    contactId: "",
-    stage: "Lead",
-    status: "active",
-    expectedCloseDate: "",
-    notes: ""
+title_c: "",
+    value_c: "",
+    contactId_c: "",
+    stage_c: "Lead",
+    status_c: "active",
+    expectedCloseDate_c: "",
+    notes_c: ""
   });
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    if (deal) {
+if (deal) {
       setFormData({
-        title: deal.title || "",
-        value: deal.value || "",
-        contactId: deal.contactId || "",
-        stage: deal.stage || "Lead",
-        status: deal.status || "active",
-        expectedCloseDate: deal.expectedCloseDate || "",
-        notes: deal.notes || ""
+        title_c: deal.title_c || "",
+        value_c: deal.value_c || "",
+        contactId_c: deal.contactId_c || "",
+        stage_c: deal.stage_c || "Lead",
+        status_c: deal.status_c || "active",
+        expectedCloseDate_c: deal.expectedCloseDate_c || "",
+        notes_c: deal.notes_c || ""
       });
     }
   }, [deal]);
@@ -65,8 +65,8 @@ const DealForm = ({ deal, contacts = [], stages = [], onSave, onCancel, isLoadin
     }
 
     const dealData = {
-      ...formData,
-      value: parseFloat(formData.value)
+...formData,
+      value_c: parseFloat(formData.value_c)
     };
 
     try {
@@ -132,9 +132,9 @@ const DealForm = ({ deal, contacts = [], stages = [], onSave, onCancel, isLoadin
           placeholder="Select a contact"
           disabled={isLoading}
         >
-          {contacts.map(contact => (
+{contacts.map(contact => (
             <option key={contact.Id} value={contact.Id}>
-              {contact.name} - {contact.company}
+              {contact.name_c} - {contact.company_c}
             </option>
           ))}
         </Select>
@@ -146,9 +146,9 @@ const DealForm = ({ deal, contacts = [], stages = [], onSave, onCancel, isLoadin
           error={errors.stage}
           disabled={isLoading}
         >
-          {stages.map(stage => (
-            <option key={stage.Id} value={stage.name}>
-              {stage.name}
+{stages.map(stage => (
+            <option key={stage.Id} value={stage.name_c}>
+              {stage.name_c}
             </option>
           ))}
         </Select>

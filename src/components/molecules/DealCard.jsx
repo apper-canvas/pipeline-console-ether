@@ -52,7 +52,7 @@ const DealCard = ({
       <Card className="p-4 group hover:shadow-hover transition-all duration-200 bg-white border-l-4 border-l-primary">
         <div className="flex items-start justify-between mb-3">
           <h4 className="font-semibold text-gray-900 text-sm leading-tight">
-            {deal.title}
+{deal.title_c}
           </h4>
           <div className="flex space-x-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             <button
@@ -78,25 +78,25 @@ const DealCard = ({
 
         <div className="space-y-2 mb-3">
           <div className="flex items-center justify-between">
-            <span className="text-lg font-bold text-gradient">
-              {formatCurrency(deal.value)}
+<span className="text-lg font-bold text-gradient">
+              {formatCurrency(deal.value_c)}
             </span>
-            <Badge variant={getStatusColor(deal.status)} size="sm">
-              {deal.status}
+            <Badge variant={getStatusColor(deal.status_c)} size="sm">
+              {deal.status_c}
             </Badge>
           </div>
 
-          {contact && (
+{contact && (
             <div className="flex items-center space-x-2 text-sm text-secondary">
               <ApperIcon name="User" className="w-3 h-3" />
-              <span>{contact.name}</span>
+              <span>{contact.name_c}</span>
             </div>
           )}
 
-          {deal.expectedCloseDate && (
+{deal.expectedCloseDate_c && (
             <div className="flex items-center space-x-2 text-sm text-secondary">
               <ApperIcon name="Calendar" className="w-3 h-3" />
-              <span>{formatDate(deal.expectedCloseDate)}</span>
+              <span>{formatDate(deal.expectedCloseDate_c)}</span>
             </div>
           )}
         </div>

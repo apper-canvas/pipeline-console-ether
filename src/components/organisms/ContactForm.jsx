@@ -8,24 +8,24 @@ import ApperIcon from "@/components/ApperIcon";
 
 const ContactForm = ({ contact, onSave, onCancel, isLoading = false }) => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    tags: "",
-    notes: ""
+name_c: "",
+    email_c: "",
+    phone_c: "",
+    company_c: "",
+    tags_c: "",
+    notes_c: ""
   });
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    if (contact) {
+if (contact) {
       setFormData({
-        name: contact.name || "",
-        email: contact.email || "",
-        phone: contact.phone || "",
-        company: contact.company || "",
-        tags: contact.tags ? contact.tags.join(", ") : "",
-        notes: contact.notes || ""
+        name_c: contact.name_c || "",
+        email_c: contact.email_c || "",
+        phone_c: contact.phone_c || "",
+        company_c: contact.company_c || "",
+        tags_c: contact.tags_c ? (typeof contact.tags_c === 'string' ? contact.tags_c : contact.tags_c.join(", ")) : "",
+        notes_c: contact.notes_c || ""
       });
     }
   }, [contact]);
@@ -64,11 +64,12 @@ const ContactForm = ({ contact, onSave, onCancel, isLoading = false }) => {
     }
 
     const contactData = {
-      ...formData,
-      tags: formData.tags
+...formData,
+      tags_c: formData.tags_c
         .split(",")
         .map(tag => tag.trim())
         .filter(tag => tag.length > 0)
+        .join(",")
     };
 
     try {

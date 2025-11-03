@@ -63,13 +63,13 @@ const Deals = () => {
       return;
     }
 
-    const filtered = deals.filter(deal => {
-      const contact = getContactById(deal.contactId);
+const filtered = deals.filter(deal => {
+      const contact = getContactById(deal.contactId_c);
       return (
-        deal.title.toLowerCase().includes(query.toLowerCase()) ||
-        deal.stage.toLowerCase().includes(query.toLowerCase()) ||
-        (contact && contact.name.toLowerCase().includes(query.toLowerCase())) ||
-        (contact && contact.company.toLowerCase().includes(query.toLowerCase()))
+        deal.title_c?.toLowerCase().includes(query.toLowerCase()) ||
+        deal.stage_c?.toLowerCase().includes(query.toLowerCase()) ||
+        (contact && contact.name_c?.toLowerCase().includes(query.toLowerCase())) ||
+        (contact && contact.company_c?.toLowerCase().includes(query.toLowerCase()))
       );
     });
     setFilteredDeals(filtered);
@@ -99,12 +99,12 @@ const Deals = () => {
       setDeals(prev => prev.filter(d => d.Id !== deal.Id));
       
       // Log activity
-      await activityService.create({
-        contactId: deal.contactId,
-        dealId: deal.Id,
-        type: "deal_deleted",
-        description: `Deal "${deal.title}" was deleted`,
-        timestamp: new Date().toISOString()
+await activityService.create({
+        contactId_c: deal.contactId_c,
+        dealId_c: deal.Id,
+        type_c: "deal_deleted",
+        description_c: `Deal "${deal.title_c}" was deleted`,
+        timestamp_c: new Date().toISOString()
       });
 
       toast.success("Deal deleted successfully!");
@@ -123,12 +123,12 @@ const Deals = () => {
         setDeals(prev => prev.map(d => d.Id === selectedDeal.Id ? savedDeal : d));
         
         // Log activity
-        await activityService.create({
-          contactId: dealData.contactId,
-          dealId: selectedDeal.Id,
-          type: "deal_updated",
-          description: `Deal "${dealData.title}" was updated`,
-          timestamp: new Date().toISOString()
+await activityService.create({
+          contactId_c: dealData.contactId_c,
+          dealId_c: selectedDeal.Id,
+          type_c: "deal_updated",
+          description_c: `Deal "${dealData.title_c}" was updated`,
+          timestamp_c: new Date().toISOString()
         });
       } else {
         savedDeal = await dealService.create(dealData);
@@ -136,11 +136,11 @@ const Deals = () => {
         
         // Log activity
         await activityService.create({
-          contactId: dealData.contactId,
-          dealId: savedDeal.Id,
-          type: "deal_created",
-          description: `Deal "${dealData.title}" was created with value ${new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(dealData.value)}`,
-          timestamp: new Date().toISOString()
+contactId_c: dealData.contactId_c,
+          dealId_c: savedDeal.Id,
+          type_c: "deal_created",
+          description_c: `Deal "${dealData.title_c}" was created with value ${new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(dealData.value_c)}`,
+          timestamp_c: new Date().toISOString()
         });
       }
       
@@ -255,8 +255,8 @@ const Deals = () => {
                 </thead>
                 <tbody className="bg-white divide-y divide-slate-100">
                   <AnimatePresence>
-                    {filteredDeals.map((deal, index) => {
-                      const contact = getContactById(deal.contactId);
+{filteredDeals.map((deal, index) => {
+                      const contact = getContactById(deal.contactId_c);
                       
                       return (
                         <motion.tr
@@ -268,15 +268,15 @@ const Deals = () => {
                         >
                           <td className="px-6 py-4">
                             <div className="text-sm font-semibold text-gray-900 group-hover:text-primary transition-colors duration-200">
-                              {deal.title}
+                              {deal.title_c}
                             </div>
                           </td>
                           
                           <td className="px-6 py-4">
                             {contact ? (
                               <div>
-                                <div className="text-sm font-medium text-gray-900">{contact.name}</div>
-                                <div className="text-sm text-secondary">{contact.company}</div>
+                                <div className="text-sm font-medium text-gray-900">{contact.name_c}</div>
+                                <div className="text-sm text-secondary">{contact.company_c}</div>
                               </div>
                             ) : (
                               <span className="text-sm text-secondary">Contact not found</span>
@@ -285,26 +285,25 @@ const Deals = () => {
                           
                           <td className="px-6 py-4">
                             <span className="text-sm font-bold text-gradient">
-                              {formatCurrency(deal.value)}
+                              {formatCurrency(deal.value_c)}
                             </span>
                           </td>
                           
                           <td className="px-6 py-4">
-                            <span className="text-sm text-secondary">{deal.stage}</span>
+                            <span className="text-sm text-secondary">{deal.stage_c}</span>
                           </td>
                           
                           <td className="px-6 py-4">
-                            <Badge variant={getStatusColor(deal.status)}>
-                              {deal.status}
+                            <Badge variant={getStatusColor(deal.status_c)}>
+                              {deal.status_c}
                             </Badge>
                           </td>
                           
                           <td className="px-6 py-4">
                             <span className="text-sm text-secondary">
-                              {formatDate(deal.expectedCloseDate)}
+                              {formatDate(deal.expectedCloseDate_c)}
                             </span>
                           </td>
-                          
                           <td className="px-6 py-4">
                             <div className="flex items-center space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                               <Button

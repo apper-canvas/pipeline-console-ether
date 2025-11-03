@@ -37,44 +37,44 @@ const ContactRow = ({ contact, onView, onEdit, onDelete, delay = 0 }) => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
-            {getInitials(contact.name)}
+{getInitials(contact.name_c)}
           </motion.div>
           <div>
             <div className="text-sm font-semibold text-gray-900 group-hover:text-primary transition-colors duration-200">
-              {contact.name}
+{contact.name_c}
             </div>
-            <div className="text-sm text-secondary">{contact.email}</div>
+            <div className="text-sm text-secondary">{contact.email_c}</div>
           </div>
         </div>
       </td>
       
-      <td className="px-6 py-4">
-        <div className="text-sm text-gray-900">{contact.company}</div>
-        <div className="text-sm text-secondary">{contact.phone}</div>
+<td className="px-6 py-4">
+        <div className="text-sm text-gray-900">{contact.company_c}</div>
+        <div className="text-sm text-secondary">{contact.phone_c}</div>
       </td>
       
       <td className="px-6 py-4">
         <div className="flex flex-wrap gap-1">
-          {contact.tags && contact.tags.length > 0 ? (
-            contact.tags.slice(0, 2).map((tag, index) => (
+{contact.tags_c && contact.tags_c.length > 0 ? (
+            (typeof contact.tags_c === 'string' ? contact.tags_c.split(',') : contact.tags_c).slice(0, 2).map((tag, index) => (
               <Badge key={index} variant="primary" size="sm">
-                {tag}
+                {tag.trim()}
               </Badge>
             ))
           ) : (
             <span className="text-sm text-secondary">No tags</span>
           )}
-          {contact.tags && contact.tags.length > 2 && (
+          {contact.tags_c && (typeof contact.tags_c === 'string' ? contact.tags_c.split(',') : contact.tags_c).length > 2 && (
             <Badge variant="default" size="sm">
-              +{contact.tags.length - 2}
+              +{(typeof contact.tags_c === 'string' ? contact.tags_c.split(',') : contact.tags_c).length - 2}
             </Badge>
           )}
         </div>
       </td>
       
       <td className="px-6 py-4">
-        <span className="text-sm text-secondary">
-          {formatDate(contact.createdAt)}
+<span className="text-sm text-secondary">
+          {formatDate(contact.CreatedOn)}
         </span>
       </td>
       

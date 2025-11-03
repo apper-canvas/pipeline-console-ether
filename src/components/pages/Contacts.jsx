@@ -47,18 +47,18 @@ const Contacts = () => {
     }
   };
 
-  const handleSearch = (query) => {
+const handleSearch = (query) => {
     if (!query.trim()) {
       setFilteredContacts(contacts);
       return;
     }
 
     const filtered = contacts.filter(contact =>
-      contact.name.toLowerCase().includes(query.toLowerCase()) ||
-      contact.email.toLowerCase().includes(query.toLowerCase()) ||
-      contact.company.toLowerCase().includes(query.toLowerCase()) ||
-      (contact.tags && contact.tags.some(tag => 
-        tag.toLowerCase().includes(query.toLowerCase())
+      contact.name_c?.toLowerCase().includes(query.toLowerCase()) ||
+      contact.email_c?.toLowerCase().includes(query.toLowerCase()) ||
+      contact.company_c?.toLowerCase().includes(query.toLowerCase()) ||
+      (contact.tags_c && contact.tags_c.split(',').some(tag => 
+        tag.trim().toLowerCase().includes(query.toLowerCase())
       ))
     );
     setFilteredContacts(filtered);
@@ -103,22 +103,22 @@ const Contacts = () => {
         setContacts(prev => prev.map(c => c.Id === selectedContact.Id ? savedContact : c));
         
         // Log activity
-        await activityService.create({
-          contactId: selectedContact.Id,
-          type: "contact_updated",
-          description: `Contact "${contactData.name}" was updated`,
-          timestamp: new Date().toISOString()
+await activityService.create({
+          contactId_c: selectedContact.Id,
+          type_c: "contact_updated",
+          description_c: `Contact "${contactData.name_c || contactData.name}" was updated`,
+          timestamp_c: new Date().toISOString()
         });
       } else {
         savedContact = await contactService.create(contactData);
         setContacts(prev => [savedContact, ...prev]);
         
         // Log activity
-        await activityService.create({
-          contactId: savedContact.Id,
-          type: "contact_created",
-          description: `Contact "${contactData.name}" was created`,
-          timestamp: new Date().toISOString()
+await activityService.create({
+          contactId_c: savedContact.Id,
+          type_c: "contact_created",
+          description_c: `Contact "${contactData.name_c || contactData.name}" was created`,
+          timestamp_c: new Date().toISOString()
         });
       }
       

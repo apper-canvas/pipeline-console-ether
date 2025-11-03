@@ -32,10 +32,10 @@ const Dashboard = () => {
         dealService.getAll()
       ]);
 
-      const activeDeals = deals.filter(deal => deal.status === "active");
-      const wonDeals = deals.filter(deal => deal.status === "won");
+const activeDeals = deals.filter(deal => deal.status_c === "active");
+      const wonDeals = deals.filter(deal => deal.status_c === "won");
       const totalDeals = deals.length;
-      const pipelineValue = activeDeals.reduce((sum, deal) => sum + (deal.value || 0), 0);
+      const pipelineValue = activeDeals.reduce((sum, deal) => sum + (deal.value_c || 0), 0);
       const closeRate = totalDeals > 0 ? Math.round((wonDeals.length / totalDeals) * 100) : 0;
 
       setStats({

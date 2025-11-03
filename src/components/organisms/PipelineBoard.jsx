@@ -43,12 +43,12 @@ const PipelineBoard = ({ onEditDeal, onDeleteDeal }) => {
     }
   };
 
-  const getContactById = (contactId) => {
+const getContactById = (contactId) => {
     return contacts.find(contact => contact.Id === contactId);
   };
 
-  const getDealsByStage = (stageName) => {
-    return deals.filter(deal => deal.stage === stageName && deal.status === "active");
+const getDealsByStage = (stageName) => {
+    return deals.filter(deal => deal.stage_c === stageName && deal.status_c === "active");
   };
 
   const getStageValue = (stageName) => {
@@ -96,30 +96,30 @@ const PipelineBoard = ({ onEditDeal, onDeleteDeal }) => {
     e.preventDefault();
     e.currentTarget.classList.remove("drag-over");
 
-    if (!draggedDeal || draggedDeal.stage === targetStage) {
+if (!draggedDeal || draggedDeal.stage_c === targetStage) {
       return;
     }
 
     try {
       const updatedDeal = {
         ...draggedDeal,
-        stage: targetStage
+        stage_c: targetStage
       };
 
       await dealService.update(draggedDeal.Id, updatedDeal);
       
       // Log activity
-      await activityService.create({
-        contactId: draggedDeal.contactId,
-        dealId: draggedDeal.Id,
-        type: "deal_stage_changed",
-        description: `Deal "${draggedDeal.title}" moved from ${draggedDeal.stage} to ${targetStage}`,
-        timestamp: new Date().toISOString()
+await activityService.create({
+        contactId_c: draggedDeal.contactId_c,
+        dealId_c: draggedDeal.Id,
+        type_c: "deal_stage_changed",
+        description_c: `Deal "${draggedDeal.title_c}" moved from ${draggedDeal.stage_c} to ${targetStage}`,
+        timestamp_c: new Date().toISOString()
       });
 
-      setDeals(prev => prev.map(deal => 
+setDeals(prev => prev.map(deal => 
         deal.Id === draggedDeal.Id 
-          ? { ...deal, stage: targetStage }
+          ? { ...deal, stage_c: targetStage }
           : deal
       ));
 
@@ -137,8 +137,8 @@ const PipelineBoard = ({ onEditDeal, onDeleteDeal }) => {
       <div className="flex space-x-6 min-w-max pb-6">
         <AnimatePresence>
           {stages.map((stage, stageIndex) => {
-            const stageDeals = getDealsByStage(stage.name);
-            const stageValue = getStageValue(stage.name);
+const stageDeals = getDealsByStage(stage.name_c);
+            const stageValue = getStageValue(stage.name_c);
 
             return (
               <motion.div
@@ -158,16 +158,16 @@ const PipelineBoard = ({ onEditDeal, onDeleteDeal }) => {
                   {/* Stage Header */}
                   <motion.div
                     className="mb-4 p-3 bg-white rounded-lg shadow-sm border-l-4"
-                    style={{ borderLeftColor: stage.color }}
+style={{ borderLeftColor: stage.color_c }}
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: stageIndex * 0.1 + 0.2 }}
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-semibold text-gray-900 text-lg">{stage.name}</h3>
+<h3 className="font-semibold text-gray-900 text-lg">{stage.name_c}</h3>
                       <motion.div
                         className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white"
-                        style={{ backgroundColor: stage.color }}
+                        style={{ backgroundColor: stage.color_c }}
                         whileHover={{ scale: 1.1 }}
                       >
                         {stageDeals.length}
@@ -196,9 +196,9 @@ const PipelineBoard = ({ onEditDeal, onDeleteDeal }) => {
                             onDragStart={(e) => handleDragStart(e, deal)}
                             onDragEnd={handleDragEnd}
                           >
-                            <DealCard
+<DealCard
                               deal={deal}
-                              contact={getContactById(deal.contactId)}
+                              contact={getContactById(deal.contactId_c)}
                               onEdit={onEditDeal}
                               onDelete={onDeleteDeal}
                               isDragging={draggedDeal?.Id === deal.Id}
